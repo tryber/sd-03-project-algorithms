@@ -1,8 +1,9 @@
 def merge_sort(word):
     word_size = len(word)
-    half = word_size // 2
-    if word_size == 1:
+    if word_size <= 1:
         return word
+
+    half = word_size // 2
 
     list1, list2 = merge_sort(word[:half]), merge_sort(word[half:])
 
