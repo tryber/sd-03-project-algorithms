@@ -8,6 +8,7 @@ def partition(array, low, high):
     array[i], array[high] = array[high], array[low]
     return i
 
+
 def quick_sort(array, low=0, high=None):
     if (high is None):
         high = len(array) - 1
@@ -16,6 +17,7 @@ def quick_sort(array, low=0, high=None):
         quick_sort(array, low, pivot_index - 1)
         quick_sort(array, pivot_index + 1, high)
     return array
+
 
 def is_anagram(first_string, second_string):
     first_string = list(first_string)
