@@ -1,5 +1,5 @@
 def study_schedule(start_time, end_time, target_time):
-    if target_time == None or max((len(start_time), len(end_time))) < 1:
+    if target_time is None or max((len(start_time), len(end_time))) < 1:
         return 0
     people_in_time = dict()
     for x in range(len(start_time)):
