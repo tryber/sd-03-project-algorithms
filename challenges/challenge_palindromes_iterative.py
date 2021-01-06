@@ -3,9 +3,8 @@ def is_palindrome_iterative(word):
     if not word:
         return False
     len_word = len(word)
-    reverse_str = word[::-1]
     for i in range(len_word):
-        if word[i] != reverse_str[i]:
+        if word[i] != word[len_word - 1 - i]:
             return False
     return True
 
