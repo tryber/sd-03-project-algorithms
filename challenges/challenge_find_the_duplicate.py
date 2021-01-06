@@ -8,31 +8,33 @@ def merge_sort(word):
 
     return merge(list1, list2)
 
+
 def merge(l1, l2):
-    size1 = len(l1)
-    size2 = len(l2)
-    S = []
+    size1, size2 = len(l1), len(l2)
     i, j = 0, 0
+    S = []
+
     while i < size1 and j < size2:
         if l1[i] < l2[j]:
-            S.append(l1[i]) 
+            S.append(l1[i])
             i += 1
         else:
             S.append(l2[j])
             j += 1
 
-    if i < size1:
-        for k in range(i, size1):
-            S.append(l1[k])
-    else:
-        for k in range(j, size2):
-            S.append(l2[k])
+    while i < size1:
+        S.append(l1[i])
+        i += 1
+
+    while j < size2:
+        S.append(l2[j])
+        j += 1
 
     return S
 
 
 def find_duplicate(nums):
-    if not nums or type nums == str:
+    if not nums or type(nums) == str:
         return False
 
     new_nums = merge_sort(nums)
