@@ -1,65 +1,37 @@
-# def mergeSort(arr):
-#     if len(arr) > 1:
-#         # Finding the mid of the array
-#         mid = len(arr) // 2
+def merge_sort(array):
+    if len(array) <= 1:
+        return array
 
-#         # Dividing the array elements
-#         L = arr[:mid]
+    mid = len(array) // 2
 
-#         # into 2 halves
-#         R = arr[mid:]
+    left, right = merge_sort(array[:mid]), merge_sort(array[mid:])
 
-#         # Sorting the first half
-#         mergeSort(L)
+    return merge(left, right, array.copy())
 
-#         # Sorting the second half
-#         mergeSort(R)
 
-#         i = j = k = 0
+def merge(left, right, merged):
 
-#         # Copy data to temp arrays L[] and R[]
-#         while i < len(L) and j < len(R):
-#             if L[i] < R[j]:
-#                 arr[k] = L[i]
-#                 i += 1
-#             else:
-#                 arr[k] = R[j]
-#                 j += 1
-#             k += 1
-
-#         # Checking if any element was left
-#         while i < len(L):
-#             arr[k] = L[i]
-#             i += 1
-#             k += 1
-
-#         while j < len(R):
-#             arr[k] = R[j]
-#             j += 1
-#             k += 1
+    left_cursor, right_cursor = 0, 0
+    while left_cursor < len(left) and right_cursor < len(right):
+        if left[left_cursor] <= right[right_cursor]:
+            merged[left_cursor + right_cursor] = left[left_cursor]
+            left_cursor += 1
+        else:
+            merged[left_cursor + right_cursor] = right[right_cursor]
+            right_cursor += 1
+    for left_cursor in range(left_cursor, len(left)):
+        merged[left_cursor + right_cursor] = left[left_cursor]
+    for right_cursor in range(right_cursor, len(right)):
+        merged[left_cursor + right_cursor] = right[right_cursor]
+    return merged
 
 
 # # Code to print the list
-# def is_anagram(first_string, second_string):
-#     """ Faça o código aqui. """
-#     # Python program for implementation of MergeSort
-#     first = list(first_string)
-#     second = list(second_string)
-#     mergeSort(first)
-#     print(first)
-#     mergeSort(second)
-#     print(second)
+def is_anagram(first_string, second_string):
+    first = list(first_string)
+    second = list(second_string)
 
-#     if second == first:
-#         return True
-#     else:
-#         return False
-
-
-# Driver Code
-if __name__ == "__main__":
-    arr = list("zasdasd")
-
-    # is_anagram(list("arr"), list("rar"))
-
-# This code is contributed by Mayank Khanna
+    if merge_sort(second) == merge_sort(first):
+        return True
+    else:
+        return False
