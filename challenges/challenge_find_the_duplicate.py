@@ -1,35 +1,37 @@
-def merge_sort(word):
-    word_size = len(word)
-    if word_size <= 1:
-        return word
+def merge_sort(arr):
+    arr_size = len(arr)
+    if arr_size <= 1:
+        return arr
 
-    half = word_size // 2
+    half = arr_size // 2
 
-    list1, list2 = merge_sort(word[:half]), merge_sort(word[half:])
+    list1, list2 = merge_sort(arr[:half]), merge_sort(arr[half:])
 
-    return merge(list1, list2)
+    return merge(list1, list2, arr.copy())
 
 
-def merge(l1, l2):
+def merge(l1, l2, S):
     size1, size2 = len(l1), len(l2)
-    i, j = 0, 0
-    S = []
+    i, j, k = 0, 0, 0
 
     while i < size1 and j < size2:
         if l1[i] < l2[j]:
-            S.append(l1[i])
+            S[k] = l1[i]
             i += 1
         else:
-            S.append(l2[j])
+            S[k] = l2[j]
             j += 1
+        k += 1
 
     while i < size1:
-        S.append(l1[i])
+        S[k] = l1[i]
         i += 1
+        k += 1
 
     while j < size2:
-        S.append(l2[j])
+        S[k] = l2[j]
         j += 1
+        k += 1
 
     return S
 
