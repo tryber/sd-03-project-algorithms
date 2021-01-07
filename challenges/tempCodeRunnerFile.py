@@ -1,15 +1,13 @@
-def study_schedule(start_time, end_time, target_time=0):
-    if not start_time:
-        return 0
+def is_palindrome_recursive(word, low, high):
+    print(high)
+    if high == 0:
+        print('teste')
+        return True
+    elif word[low] == word[high]:
+        low += 1
+        high -= 1
+        return is_palindrome_recursive(word, low, high)
     else:
-        return 1
-    if not end_time:
-        return 0
-    else:
-        return 1
+        return False  
 
-
-start_time = ''
-end_time = [1, 1, 0, 9]
-
-print(study_schedule(start_time, end_time))
+print(is_palindrome_recursive('ovjo', 0, 3))
