@@ -26,7 +26,9 @@ def test_validar_tempo_iterative():
         "from challenges.challenge_palindromes_iterative "
         "import is_palindrome_iterative"
     )
-    assert (
+    word = "ANA"
+    algorithms_correct = is_palindrome_iterative(word) is True
+    correct_time = (
         timeit.timeit(
             'is_palindrome_iterative("ANA")',
             setup=f"{setup_import}",
@@ -34,3 +36,4 @@ def test_validar_tempo_iterative():
         )
         <= 0.005
     )
+    assert algorithms_correct and correct_time

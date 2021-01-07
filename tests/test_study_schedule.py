@@ -37,12 +37,13 @@ def test_validar_target_time_com_vazio():
 
 
 def test_validar_tempo_schedule():
+    start_time = [2, 1, 2, 1, 4, 4]
+    end_time = [2, 2, 3, 5, 5, 5]
+    algorithms_correct = study_schedule(start_time, end_time, 5) == 3
     setup_import = (
         "from challenges.challenge_study_schedule " "import study_schedule"
     )
-    start_time = [2, 1, 2, 1, 4, 4]
-    end_time = [2, 2, 3, 5, 5, 5]
-    assert (
+    correct_time = (
         timeit.timeit(
             f"study_schedule({start_time}, {end_time}, 5)",
             setup=f"{setup_import}",
@@ -50,3 +51,4 @@ def test_validar_tempo_schedule():
         )
         <= 0.02
     )
+    assert algorithms_correct and correct_time

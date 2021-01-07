@@ -38,11 +38,20 @@ def test_validar_tempo_anagrama():
         "adipiscing elit, do sed eiusmod tempor "
         "incididunt ut labore et dolore magna aliqua."
     )
-    assert (
+    algorithms_correct = is_anagram(first_string, second_string) is True
+    correct_time = (
         timeit.timeit(
             f'is_anagram("{first_string}", "{second_string}")',
             setup=f"{setup_import}",
             number=10000,
         )
-        <= 2
+        <= 8.2
     )
+    print(
+        timeit.timeit(
+            f'is_anagram("{first_string}", "{second_string}")',
+            setup=f"{setup_import}",
+            number=10000,
+        )
+    )
+    assert algorithms_correct and correct_time

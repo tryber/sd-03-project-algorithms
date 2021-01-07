@@ -291,7 +291,7 @@ second_string = "empada"
 # saída: False
 ```
 
-- Este requisito será testado executando 10.000 vezes sobre uma mesma entrada. Tais execuções, **no avaliador**, devem acontecer integralmente em menos de 2 segundos. O tempo de execução do código na sua máquina pode variar em relação ao avaliador, então é importante levar somente ele em consideração.
+- Este requisito será testado executando 10.000 vezes sobre uma mesma entrada. Tais execuções, **no avaliador**, devem acontecer integralmente em menos de 8.2 segundos. O tempo de execução do código na sua máquina pode variar em relação ao avaliador, então é importante levar somente ele em consideração.
 
 **Dica:** use um algoritmo de, no máximo, complexidade `O(n log n)`
 
@@ -315,7 +315,7 @@ second_string = "empada"
 
 **[Retorne `false` se a segunda palavra passada por parâmetro for uma string vazia]**
 
-**[Execute a função, somando 10.000 execuções para uma entrada pequena, em menos que 2s (tempo da execução do avaliador no Pull Request)]**
+**[Execute a função, somando 10.000 execuções para uma entrada pequena, em menos que 8.2s (tempo da execução do avaliador no Pull Request)]**
 
 ### Requisitos bônus:
 
