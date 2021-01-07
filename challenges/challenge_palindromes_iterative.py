@@ -10,6 +10,3 @@ def is_palindrome_iterative(word):
             low = low + 1
             high = high - 1
     return False
-
-
-print(is_palindrome_iterative("marcoocram"))
