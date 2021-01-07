@@ -29,14 +29,12 @@ def merge_sort(array):
 
 
 def find_duplicate(nums):
-    # cobre se não houver parametros suficientes ou passar um array vazio
     if not nums or len(nums) < 2:
         return False
 
     ordered_nums = merge_sort(nums)
 
     for i in range(len(ordered_nums) - 1):
-        # caso algum elemento não seja um inteiro positivo
         if not isinstance(ordered_nums[i], int) or ordered_nums[i] < 1:
             return False
         if ordered_nums[i] == ordered_nums[i + 1]:
