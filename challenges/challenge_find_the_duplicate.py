@@ -1,21 +1,26 @@
-def merge(left, right, merged):
+def merge(left, right):
+
+    result = []
     left_cursor, right_cursor = 0, 0
 
-    while left_cursor < len(left) and right_cursor < len(right):
+    while len(result) < len(left) + len(right):
+
         if left[left_cursor] <= right[right_cursor]:
-            merged[left_cursor + right_cursor] = left[left_cursor]
+            result.append(left[left_cursor])
             left_cursor += 1
         else:
-            merged[left_cursor + right_cursor] = right[right_cursor]
+            result.append(right[right_cursor])
             right_cursor += 1
 
-    for left_cursor in range(left_cursor, len(left)):
-        merged[left_cursor + right_cursor] = left[left_cursor]
+        if right_cursor == len(right):
+            result += left[left_cursor:]
+            break
 
-    for right_cursor in range(right_cursor, len(right)):
-        merged[left_cursor + right_cursor] = right[right_cursor]
+        if left_cursor == len(left):
+            result += right[right_cursor:]
+            break
 
-    return merged
+    return result
 
 
 def merge_sort(array):
@@ -25,7 +30,7 @@ def merge_sort(array):
 
     mid = len(array) // 2
     left, right = merge_sort(array[:mid]), merge_sort(array[mid:])
-    return merge(left, right, array.copy())
+    return merge(left, right)
 
 
 def find_duplicate(nums):
