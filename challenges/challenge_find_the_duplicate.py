@@ -1,49 +1,32 @@
-def merge_sort(arr):
-    arr_size = len(arr)
-    if arr_size <= 1:
-        return arr
-
-    half = arr_size // 2
-
-    list1, list2 = merge_sort(arr[:half]), merge_sort(arr[half:])
-
-    return merge(list1, list2, arr.copy())
-
-
-def merge(l1, l2, S):
-    size1, size2 = len(l1), len(l2)
-    i, j, k = 0, 0, 0
-
-    while i < size1 and j < size2:
-        if l1[i] < l2[j]:
-            S[k] = l1[i]
-            i += 1
-        else:
-            S[k] = l2[j]
-            j += 1
-        k += 1
-
-    while i < size1:
-        S[k] = l1[i]
-        i += 1
-        k += 1
-
-    while j < size2:
-        S[k] = l2[j]
-        j += 1
-        k += 1
-
-    return S
-
-
 def find_duplicate(nums):
-    if not nums or type(nums) == str:
+    if type(nums) != list or len(nums) <= 1:
         return False
 
-    new_nums = merge_sort(nums)
+    actual = nums[-1]
+    if type(actual) != int:
+        return False
+    prox = nums[actual - 1]
+    while actual != prox:
+        prox, nums[actual - 1], actual = (
+            nums[nums[actual - 1] - 1],
+            actual,
+            prox,
+        )
 
-    for i in range(1, len(nums)):
-        if new_nums[i] == new_nums[i - 1]:
-            return new_nums[i]
+    return actual
 
-    return False
+    # nums.sort()
+
+    # for i in range(1, len(nums)):
+    #     if nums[i] == nums[i - 1]:
+    #         return nums[i]
+
+    # return False
+
+
+if __name__ == "__main__":
+    print(find_duplicate([1, 3, 4, 2, 2]), "2")
+    print(find_duplicate([3, 1, 3, 4, 2]), "3")
+    print(find_duplicate([1, 1]), "1")
+    print(find_duplicate([1, 1, 2]), "1")
+    print(find_duplicate([3, 1, 2, 4, 6, 5, 7, 7, 7, 8]), "7")
