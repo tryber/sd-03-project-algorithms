@@ -1,22 +1,57 @@
-def find_duplicate(nums):
-    if type(nums) != list or len(nums) <= 1:
-        return False
+# Outra solução de O(n)
 
-    actual = nums[-1]
-    if type(actual) != int or actual < 0:
-        return False
+# if type(nums) != list or len(nums) <= 1:
+#     return False
 
-    prox = nums[actual - 1]
-    while actual != prox:
-        if type(actual) != int or actual < 0:
+# actual = nums[-1]
+# if type(actual) != int or actual < 0:
+#     return False
+
+# prox = nums[actual - 1]
+# while actual != prox:
+#     if type(actual) != int or actual < 0:
+#         return False
+#     prox, nums[actual - 1], actual = (
+#         nums[nums[actual - 1] - 1],
+#         actual,
+#         prox,
+#     )
+
+# return actual
+
+
+def verify_array_to_find_duplicate(nums):
+    try:
+        if type(nums) != list or len(nums) <= 1:
             return False
-        prox, nums[actual - 1], actual = (
-            nums[nums[actual - 1] - 1],
-            actual,
-            prox,
-        )
 
-    return actual
+        nums.sort()
+
+        if nums[0] > 0 or type(nums[0]) == str:
+            return False
+        return nums
+    except (TypeError, IndexError):
+        print(nums)
+        return False
+
+
+def find_duplicate(nums):
+    new_nums = verify_array_to_find_duplicate(nums)
+    if not new_nums:
+        return False
+
+    low, high = 0, len(nums) - 1
+
+    while low < high:
+        mid = (low + high) // 2
+        if nums[mid - 1] == nums[mid] or nums[mid] == nums[mid + 1]:
+            return nums[mid]
+        elif nums[mid] > mid + 1:
+            high = mid - 1
+        else:
+            low = mid + 1
+
+    return False
 
 
 if __name__ == "__main__":
