@@ -1,3 +1,5 @@
+# feito com a ajuda do gustavo
+
 def find_real_duplicate(nums):
     low = 0
     high = len(nums) - 1
