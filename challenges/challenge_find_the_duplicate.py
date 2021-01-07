@@ -29,7 +29,6 @@ def merge_sort(array):
 
 
 def find_duplicate(nums):
-    """ Faça o código aqui. """
     # cobre se não houver parametros suficientes ou passar um array vazio
     if not nums or len(nums) < 2:
         return False
@@ -44,26 +43,3 @@ def find_duplicate(nums):
             return ordered_nums[i]
 
     return False
-
-
-if __name__ == "__main__":
-    nums = [1, 3, 4, 2, 2]
-    print(find_duplicate(nums))
-    nums = [3, 1, 3, 4, 2]
-    print(find_duplicate(nums))
-    nums = [1, 1]
-    print(find_duplicate(nums))
-    nums = [1, 1, 2]
-    print(find_duplicate(nums))
-    nums = [8]
-    print(find_duplicate(nums))
-    nums = [-1, 1]
-    print(find_duplicate(nums))
-    nums = ["a", "b"]
-    print(find_duplicate(nums))
-    nums = [-1, -1]
-    print(find_duplicate(nums))
-    nums = [1, 2]
-    print(find_duplicate(nums))
-    nums = [3, 1, 2, 4, 6, 5, 7, 7, 7, 8]
-    print(find_duplicate(nums))

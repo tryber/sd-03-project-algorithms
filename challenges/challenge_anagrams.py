@@ -24,7 +24,6 @@ def merge_sort(array):
 
 
 def is_anagram(first_string, second_string):
-    """ Faça o código aqui. """
     if len(first_string) == 0 or len(second_string) == 0:
         return False
     elif len(first_string) != len(second_string):
@@ -36,21 +35,3 @@ def is_anagram(first_string, second_string):
             if ordered_string_1[index] != ordered_string_2[index]:
                 return False
             return True
-
-
-if __name__ == "__main__":
-    first_string = ""
-    second_string = ""
-    print(is_anagram(first_string, second_string))
-    first_string = "amor"
-    second_string = "roma"
-    print(is_anagram(first_string, second_string))
-    first_string = "pedra"
-    second_string = "perda"
-    print(is_anagram(first_string, second_string))
-    first_string = "pato"
-    second_string = "tapo"
-    print(is_anagram(first_string, second_string))
-    first_string = "coxinha"
-    second_string = "empada"
-    print(is_anagram(first_string, second_string))
