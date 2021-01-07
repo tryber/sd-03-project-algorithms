@@ -21,6 +21,8 @@ def is_anagram(first_string, second_string):
         return False
     elif len(first_string) != len(second_string):
         return False
+    if ordenar_anagrama(first_string) == ordenar_anagrama(second_string):
+        return True
 
 
 """  codigo com bug passando em
