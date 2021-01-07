@@ -2,13 +2,14 @@ def ordenar_anagrama(first_string, second_string):
     lista1 = []
     list2 = []
 
-    for i in range(len(first_string)):
-        lista1.append(first_string[i]).sort()
-        return lista1
+    for i in len(first_string):
+        lista1.append(first_string[i])
+        return lista1.sort()
 
-    for j in range(len(second_string)):
-        list2.append(second_string[j]).sort()
-        return list2
+    for j in len(second_string):
+        list2.append(second_string[j])
+        return list2.sort()
+
     if lista1 == list2:
         return True
     else:
