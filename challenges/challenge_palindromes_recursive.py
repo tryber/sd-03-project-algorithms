@@ -1,8 +1,8 @@
 def is_palindrome_recursive(word, low, high):
-    if word == '':
-        return False
-    if word != word[:: -1]:
-        return False
-    if word == word[:: -1]:
+    if len(word) <= 1:
         return True
-    return is_palindrome_recursive(word, low, high)
+    else:
+        return low == high and is_palindrome_recursive(word[1: -1], low, high)
+    
+
+# print(is_palindrome_recursive('natan','n', 'n'));
