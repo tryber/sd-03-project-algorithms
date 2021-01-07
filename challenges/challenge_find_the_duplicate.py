@@ -35,7 +35,7 @@ def binary_search(array, low_index, high_index, value):
 def check_early_exit(nums):
     if len(nums) < 2:
         return False
-    if isinstance(nums, str):
+    if isinstance(nums[0], str):
         return False
 
     # Ordena o array
