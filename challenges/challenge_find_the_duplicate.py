@@ -27,11 +27,11 @@ def verify_array_to_find_duplicate(nums):
 
         nums.sort()
 
-        if nums[0] > 0 or type(nums[0]) == str:
+        if nums[0] < 0 or type(nums[0]) != int:
             return False
+
         return nums
     except (TypeError, IndexError):
-        print(nums)
         return False
 
 
