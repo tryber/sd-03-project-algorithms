@@ -2,9 +2,9 @@ def is_palindrome_iterative(word):
     """ Faça o código aqui. """
     if not word:
         return False
-    len_word = len(word) - 1
-    for i in range(len_word):
-        if word[i] != word[len_word - i]:
+    len_word = len(word)
+    for i in range(len_word // 2):
+        if word[i] != word[len_word - 1 - i]:
             return False
     return True
 
