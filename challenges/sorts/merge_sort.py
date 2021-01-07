@@ -21,14 +21,14 @@ def merge(left, right, merged):
             merged = (
                 merged[: left_cursor + right_cursor]
                 + left[left_cursor]
-                + merged[left_cursor + right_cursor + 1 :]
+                + merged[left_cursor + right_cursor + 1:]
             )
             left_cursor += 1
         else:
             merged = (
                 merged[: left_cursor + right_cursor]
                 + right[right_cursor]
-                + merged[left_cursor + right_cursor + 1 :]
+                + merged[left_cursor + right_cursor + 1:]
             )
             right_cursor += 1
     # a iteração acima irá inserir os elementos de forma ordenada
@@ -42,7 +42,7 @@ def merge(left, right, merged):
         merged = (
             merged[: left_cursor + right_cursor]
             + left[left_cursor]
-            + merged[left_cursor + right_cursor + 1 :]
+            + merged[left_cursor + right_cursor + 1:]
         )
 
     # itera sobre os elementos restantes na partição "direita"
@@ -51,7 +51,7 @@ def merge(left, right, merged):
         merged = (
             merged[: left_cursor + right_cursor]
             + right[right_cursor]
-            + merged[left_cursor + right_cursor + 1 :]
+            + merged[left_cursor + right_cursor + 1:]
         )
 
     return merged
