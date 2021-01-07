@@ -1,4 +1,4 @@
-from challenges.sorts.merge_sort import merge_sort
+from challenges.sorts.merge_sort_string import merge_sort
 
 
 def is_anagram(first_string, second_string):
@@ -9,9 +9,3 @@ def is_anagram(first_string, second_string):
         return True
     else:
         return False
-
-
-string_one = 'pedra'
-string_two = 'perda'
-
-print(is_anagram(string_one, string_two))
