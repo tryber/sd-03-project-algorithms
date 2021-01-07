@@ -84,6 +84,3 @@ def is_anagram(first_string, second_string):
             return False
     else:
         return False
-
-
-print(is_anagram("amor", "roma"))
