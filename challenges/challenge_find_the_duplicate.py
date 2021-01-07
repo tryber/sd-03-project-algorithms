@@ -3,10 +3,13 @@ def find_duplicate(nums):
         return False
 
     actual = nums[-1]
-    if type(actual) != int:
+    if type(actual) != int or actual < 0:
         return False
+
     prox = nums[actual - 1]
     while actual != prox:
+        if type(actual) != int or actual < 0:
+            return False
         prox, nums[actual - 1], actual = (
             nums[nums[actual - 1] - 1],
             actual,
@@ -14,14 +17,6 @@ def find_duplicate(nums):
         )
 
     return actual
-
-    # nums.sort()
-
-    # for i in range(1, len(nums)):
-    #     if nums[i] == nums[i - 1]:
-    #         return nums[i]
-
-    # return False
 
 
 if __name__ == "__main__":
