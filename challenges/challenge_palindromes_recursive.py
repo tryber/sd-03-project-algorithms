@@ -1,8 +1,9 @@
 def is_palindrome_recursive(word, low, high):
     """ Faça o código aqui. """
-    if word == '':
+    if word == "":
         return False
-    elif word == word[::-1]:
+    if high <= low:
         return True
-    else:
-        return False
+    if word[low] == word[high]:
+        return is_palindrome_recursive(word, low+1, high-1)
+    return False
