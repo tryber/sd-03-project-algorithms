@@ -2,15 +2,12 @@ def is_palindrome_iterative(word):
     """ Faça o código aqui. """
     search_limit = len(word) // 2
 
-    if len(word) == 1:
-        return True
-    elif len(word) == 0:
+    if len(word) == 0:
         return False
-    else:
-        for i in range(search_limit):
-            if word[i] == word[len(word) - i - 1]:
-                return True
+    for i in range(search_limit):
+        if word[i] != word[len(word) - i - 1]:
             return False
+    return True
 
 
 if __name__ == "__main__":
