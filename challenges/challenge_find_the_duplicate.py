@@ -28,24 +28,6 @@ def merge_sort(array):
     return merge(left, right, array.copy())
 
 
-# busca binária, retorna o valor se achado na lista, senão retorna None
-def search_value(array, value):
-    low_index = 0
-    high_index = len(array) - 1
-
-    if high_index < low_index:
-        return None
-
-    while high_index >= low_index:
-        middle_index = (high_index + low_index) // 2
-        if array[middle_index] == value:
-            return value
-        elif array[middle_index] > value:
-            high_index = middle_index - 1
-        else:
-            low_index = middle_index + 1
-
-
 def find_duplicate(nums):
     """ Faça o código aqui. """
     # cobre se não houver parametros suficientes ou passar um array vazio
