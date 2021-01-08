@@ -349,8 +349,6 @@ nums = [3, 1, 2, 4, 6, 5, 7, 7, 7, 8]
 
 **Dica:** use um algoritmo de, no máximo, complexidade `O(n log n)`
 
-- Faça o algoritmo aplicando busca binária e utilizando a solução iterativa;
-
 - O array montado deve:
 
   - Ter apenas números inteiros positivos maiores do que 1;
