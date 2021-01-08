@@ -8,10 +8,9 @@ def merge_sort(array):
 
 
 def merge(left, right, arr):
-    print(f"{right=}")
-    print(f"{left=}")
 
     left_cursor, right_cursor = 0, 0
+
     while left_cursor < len(left) and right_cursor < len(right):
         if left[left_cursor] <= right[right_cursor]:
             arr[left_cursor + right_cursor] = left[left_cursor]
@@ -29,7 +28,9 @@ def merge(left, right, arr):
 def find_duplicate(nums):
     if not isinstance(nums, list) or len(nums) < 2:
         return False
+
     sorted_nums = merge_sort(nums)
+
     for i in range(len(sorted_nums) - 1):
         if not isinstance(sorted_nums[i], int) or sorted_nums[i] < 1:
             return False
