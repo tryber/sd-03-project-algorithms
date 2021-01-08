@@ -43,12 +43,12 @@ def test_validar_tempo_schedule():
     setup_import = (
         "from challenges.challenge_study_schedule " "import study_schedule"
     )
-    correct_time = (
-        timeit.timeit(
+    time = timeit.timeit(
             f"study_schedule({start_time}, {end_time}, 5)",
             setup=f"{setup_import}",
             number=10000,
         )
-        <= 0.02
-    )
-    assert algorithms_correct and correct_time
+    correct_time = ( time <= 0.02 )
+    assert (
+        algorithms_correct and correct_time
+    ), f"Falhou, o tempo foi: {time}, algoritmo correto? {algorithms_correct}"
