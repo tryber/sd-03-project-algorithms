@@ -2,7 +2,7 @@ def is_palindrome_iterative(word):
     high = len(word) - 1
     low = 0
 
-    if word == '':
+    if word == "":
         return False
 
     while low < high:
@@ -14,5 +14,5 @@ def is_palindrome_iterative(word):
     return True
 
 
-word = 'ANA'
+word = "ANA"
 print(is_palindrome_iterative(word))
