@@ -3,8 +3,8 @@ from challenges.sorts.merge_sort_array import merge_sort
 
 def find_duplicate(nums):
     if type(nums) == list and len(nums) > 1 and type(nums[0]) == int:
-        high = len(nums)
         ordered_array = merge_sort(nums)
+        high = len(nums)
         low = 1
 
         while low < high - 1:
