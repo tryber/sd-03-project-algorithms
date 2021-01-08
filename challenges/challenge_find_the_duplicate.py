@@ -8,10 +8,13 @@ def find_duplicate(nums):
         low = 1
 
         while low < high - 1:
-            if ordered_array[low] == ordered_array[low - 1] or ordered_array[low] == ordered_array[low + 1]:
+            if (
+                ordered_array[low] == ordered_array[low - 1]
+                or ordered_array[low] == ordered_array[low + 1]
+            ):
                 return ordered_array[low]
             low += 2
-        
+
         if nums[0] == nums[1]:
             return nums[0]
         else:
