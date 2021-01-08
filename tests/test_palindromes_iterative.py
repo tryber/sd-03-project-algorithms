@@ -33,7 +33,7 @@ def test_validar_tempo_iterative():
             setup=f"{setup_import}",
             number=10000,
         )
-    correct_time = ( time <= 0.005 )
+    correct_time = time <= 0.005
     assert (
         algorithms_correct and correct_time
     ), f"Falhou, o tempo foi: {time}, algoritmo correto? {algorithms_correct}"
