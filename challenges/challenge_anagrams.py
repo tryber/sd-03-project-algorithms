@@ -35,3 +35,6 @@ def is_anagram(first_string, second_string):
         return True
     else:
         return False
+
+
+is_anagram("ABBA", "BABA")
