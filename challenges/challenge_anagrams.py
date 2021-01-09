@@ -13,7 +13,7 @@ def merge(left, right, merged):
         merged[left_piece + right_piece] = left[left_piece]
 
     for right_piece in range(right_piece, len(right)):
-        merged[left_piece + right_piece] = left[right_piece]
+        merged[left_piece + right_piece] = right[right_piece]
 
     return merged
 
