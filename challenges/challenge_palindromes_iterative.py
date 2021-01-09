@@ -1,9 +1,14 @@
 def is_palindrome_iterative(word):
     if word == '':
         return False
-    if len(word) <= 1:
-        return True
-    if word[0] != word[-1]:
-        return False
 
-    return is_palindrome_iterative(word[1:-1])
+    cover = len(word) - 1
+    index = 0
+
+    while index < (cover // 2):
+        if word[index] != word[(cover - index)]:
+            return False
+
+        index += 1
+
+    return True

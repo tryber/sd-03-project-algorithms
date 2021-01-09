@@ -1,14 +1,9 @@
 def is_palindrome_recursive(word, low, high):
     if word == '':
         return False
+    if len(word) <= 1:
+        return True
+    if word[0] != word[-1]:
+        return False
 
-    cover = high - low
-    index = 0
-
-    while index < (cover // 2):
-        if word[(low + index)] != word[(high - index)]:
-            return False
-
-        index += 1
-
-    return True
+    return is_palindrome_recursive(word[(low + 1):(high - 1)])
