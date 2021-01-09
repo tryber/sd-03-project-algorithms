@@ -1,7 +1,9 @@
 def merge(left, right, merged):
+
     left_piece, right_piece = 0, 0
 
     while left_piece < len(left) and right_piece < len(right):
+
         if left[left_piece] <= right[right_piece]:
             merged[left_piece + right_piece] = left[left_piece]
             left_piece += 1
@@ -26,7 +28,7 @@ def merge_sort(array):
 
     left, right = merge_sort(array[:mid]), merge_sort(array[mid:])
 
-    return merge(left, right, array.copy)
+    return merge(left, right, array.copy())
 
 
 def is_anagram(first_string, second_string):
