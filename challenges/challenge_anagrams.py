@@ -36,10 +36,10 @@ def is_anagram(first_string, second_string):
     list_first_string = list(first_string)
     list_second_string = list(second_string)
 
-    first_array = merge_sort(list_first_string)
-    second_array = merge_sort(list_second_string)
+    first_order_string = ''.join(merge_sort(list_first_string))
+    second_order_string = ''.join(merge_sort(list_second_string))
 
-    if first_array == second_array:
+    if first_order_string == second_order_string:
         return True
     else:
         return False
