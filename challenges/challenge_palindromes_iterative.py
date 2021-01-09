@@ -1,7 +1,7 @@
 def is_palindrome_iterative(word):
     if word == '':
         return False
-    if len(word) < 2:
+    if len(word) <= 1:
         return True
     if word[0] != word[-1]:
         return False
