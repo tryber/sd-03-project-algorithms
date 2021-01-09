@@ -6,7 +6,7 @@ def find_duplicate(nums):
     index = 0
 
     for number in order_nums:
-        if index == len(order_nums):
+        if index == (len(order_nums) - 1):
             return False
 
         if number == order_nums[index + 1]:
