@@ -1,6 +1,6 @@
 def study_schedule(start_time, end_time, target_time):
 
-    if len(start_time) < 1 or len(target_time) < 1:
+    if len(start_time) < 1 or target_time == 0:
         return 0
 
     count = 0
