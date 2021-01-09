@@ -4,8 +4,10 @@ def study_schedule(start_time, end_time, target_time):
         return 0
 
     count = 0
-    for index, hour in start_time:
-        if hour <= start_time and start_time <= end_time[index]:
+    index = 0
+    for hour in start_time:
+        if hour <= start_time[index] and start_time <= end_time[index]:
             count += 1
+        index += 1
 
     return count
