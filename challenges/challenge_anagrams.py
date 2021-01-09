@@ -12,7 +12,7 @@ def merge(left, right, merged):
     for left_piece in range(left_piece, len(left)):
         merged[left_piece + right_piece] = left[left_piece]
 
-    for right_piece in range(right_piece, len(left)):
+    for right_piece in range(right_piece, len(right)):
         merged[left_piece + right_piece] = left[right_piece]
 
     return merged
@@ -33,8 +33,11 @@ def is_anagram(first_string, second_string):
     if first_string == '' or second_string == '':
         return False
 
-    first_array = merge_sort(list(first_string))
-    second_array = merge_sort(list(second_string))
+    list_first_string = list(first_string)
+    list_second_string = list(second_string)
+
+    first_array = merge_sort(list_first_string)
+    second_array = merge_sort(list_second_string)
 
     if first_array == second_array:
         return True
