@@ -33,11 +33,8 @@ def is_anagram(first_string, second_string):
     if first_string == '' or second_string == '':
         return False
 
-    list_first_string = list(first_string)
-    list_second_string = list(second_string)
-
-    first_order_string = ''.join(merge_sort(list_first_string))
-    second_order_string = ''.join(merge_sort(list_second_string))
+    first_order_string = ''.join(merge_sort(list(first_string)))
+    second_order_string = ''.join(merge_sort(list(second_string)))
 
     if first_order_string == second_order_string:
         return True
