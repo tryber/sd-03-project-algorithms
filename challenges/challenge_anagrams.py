@@ -30,6 +30,9 @@ def merge_sort(array):
 
 
 def is_anagram(first_string, second_string):
+    if first_string == '' or second_string == '':
+        return 0
+
     first_array = list(first_string)
     second_array = list(second_string)
 
@@ -38,5 +41,5 @@ def is_anagram(first_string, second_string):
 
     if order_first_array == order_second_array:
         return True
-
-    return False
+    else:
+        return False
