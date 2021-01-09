@@ -31,15 +31,12 @@ def merge_sort(array):
 
 def is_anagram(first_string, second_string):
     if first_string == '' or second_string == '':
-        return 0
+        return False
 
-    first_array = list(first_string)
-    second_array = list(second_string)
+    first_array = merge_sort(list(first_string))
+    second_array = merge_sort(list(second_string))
 
-    order_first_array = merge_sort(first_array)
-    order_second_array = merge_sort(second_array)
-
-    if order_first_array == order_second_array:
+    if first_array == second_array:
         return True
     else:
         return False
