@@ -31,9 +31,3 @@ def is_anagram(first_string, second_string):
         if primeiro_anagrama[i] != segundo_anagrama[i]:
             return False
     return True
-
-
-    while len(first_string) != len(second_string):
-        return False
-    else:
-        return True """
