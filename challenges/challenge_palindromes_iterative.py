@@ -1,3 +1,4 @@
+"""
 def is_palindrome_iterative(word):
     if word == '':
         return False
@@ -7,9 +8,9 @@ def is_palindrome_iterative(word):
         return False
 
     return is_palindrome_iterative(word[1:-1])
-
-
 """
+
+
 def is_palindrome_iterative(word):
     if word == '':
         return False
@@ -23,4 +24,3 @@ def is_palindrome_iterative(word):
         if index == (cover // 2):
             return True
         index += 1
-"""
