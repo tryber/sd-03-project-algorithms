@@ -21,6 +21,6 @@ def is_palindrome_iterative(word):
     while index < cover:
         if word[index] != word[(cover - index)]:
             return False
-        if index == (cover // 2):
+        elif index == (cover // 2):
             return True
         index += 1
