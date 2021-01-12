@@ -8,6 +8,6 @@ def find_duplicate(nums):
 
     if duplicate_num != 0:
         return duplicate_num
-    
+
     else:
         return False
