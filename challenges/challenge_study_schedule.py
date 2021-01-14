@@ -6,12 +6,15 @@ def study_schedule(start_time, end_time, target_time):
         or len(end_time) == 0
     ):
         return 0
+
     students_online = 0
+
     for i in range(len(start_time)):
         if start_time[i] == target_time or (
             start_time[i] < target_time and end_time[i] >= target_time
         ):
             students_online += 1
+
     return students_online
 
 
