@@ -6,4 +6,3 @@ def study_schedule(start_time, end_time, target_time):
                 target_time_counter += 1
 
     return target_time_counter
-    
