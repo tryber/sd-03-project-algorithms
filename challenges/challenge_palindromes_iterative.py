@@ -2,12 +2,11 @@ def is_palindrome_iterative(word):
     if not word:
         return False
 
-    reverse_word = ""
+    for i in range(len(word)):
+        if word[i] != word[len(word) - 1 - i]:
+            return False
 
-    for i in range(len(word) - 1, -1, -1):
-        reverse_word += word[i]
-
-    return True if reverse_word == word else False
+    return True
 
 
 if __name__ == "__main__":
