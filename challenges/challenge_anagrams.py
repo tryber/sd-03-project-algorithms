@@ -13,6 +13,7 @@ def insertion_sort(string):
     str1 = ""
     return str1.join(array)
 
+
 def is_anagram(first_string, second_string):
     first_string = insertion_sort(first_string)
     second_string = insertion_sort(second_string)
