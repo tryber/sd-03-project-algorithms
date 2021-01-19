@@ -45,9 +45,12 @@ def merge(left, right, merged):
 
     return merged
 
+
 def is_anagram(first_string, second_string):
     first_string_sorted = ""
     second_string_sorted = ""
-    first_string_sorted = first_string_sorted.join(merge_sort(list(first_string)))
-    second_string_sorted = second_string_sorted.join(merge_sort(list(second_string)))
+    first_string_sorted = first_string_sorted.join(
+        merge_sort(list(first_string)))
+    second_string_sorted = second_string_sorted.join(
+        merge_sort(list(second_string)))
     return first_string_sorted == second_string_sorted
