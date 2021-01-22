@@ -1,2 +1,4 @@
 def is_anagram(first_string, second_string):
-    """ Faça o código aqui. """
+    return False
+
+print(is_anagram('pedra', 'pedraa'))
