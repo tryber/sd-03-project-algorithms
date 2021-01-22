@@ -24,10 +24,10 @@ def merge(left, right, merged):
         merged[left_cursor + right_cursor] = right[right_cursor]
     return merged
 
+
 def is_anagram(first_string, second_string):
     first = list(first_string)
     second = list(second_string)
-
 
     if merge_sort(second) == merge_sort(first):
         return True
