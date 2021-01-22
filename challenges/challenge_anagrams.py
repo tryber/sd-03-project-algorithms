@@ -33,10 +33,3 @@ def is_anagram(first_string, second_string):
         return True
     else:
         return False
-
-
-print('Should be true:', is_anagram("perna", "penra"))
-print('Should be true:', is_anagram('pedra', 'perda'))
-print('Should be false:', is_anagram('pedra', 'perdaa'))
-print('Should be false:', is_anagram('pedra', ''))
-print('Should be false:', is_anagram('', 'pedra'))
