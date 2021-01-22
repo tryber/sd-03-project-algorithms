@@ -6,8 +6,3 @@ def is_palindrome_recursive(word, low, high):
         return True
     else:
         return is_palindrome_recursive(word, low + 1, high - 1)
-
-
-print(is_palindrome_recursive('ANA', 0, len('ANA') - 1) )
-print(is_palindrome_recursive('SOCOS', 0, len('SOCOS') - 1) )
-print(is_palindrome_recursive('faa', 0, len('faa') - 1) )
