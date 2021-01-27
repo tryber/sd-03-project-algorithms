@@ -9,5 +9,3 @@ def find_duplicate(nums):
             duplicate = False
 
     return duplicate
-
-print(find_duplicate([1, 5, 2, 4, 4]))
