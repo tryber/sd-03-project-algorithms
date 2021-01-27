@@ -15,8 +15,10 @@ def insertion_sort(unsorted_list):
         sorted_list[current_position] = current_value
     return sorted_list
 
+
 def is_anagram(first_string, second_string):
-    if len(first_string) != len(second_string): return False
+    if len(first_string) != len(second_string):
+        return False
 
     sorted_first_string = insertion_sort([*first_string])
     sorted_second_string = insertion_sort([*second_string])
@@ -29,7 +31,8 @@ def is_anagram(first_string, second_string):
             break
         else:
             is_anagram = True
-    
+
     return is_anagram
+
 
 print(is_anagram('barco', 'ocrab'))
