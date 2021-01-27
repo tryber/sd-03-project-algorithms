@@ -1,2 +1,13 @@
 def find_duplicate(nums):
-    """ Faça o código aqui. """
+    nums.sort()
+    duplicate = 0
+    for i in range(0, len(nums) - 1):
+        if nums[i] == nums[i + 1]:
+            duplicate = nums[i]
+            break
+        else:
+            duplicate = False
+
+    return duplicate
+
+print(find_duplicate([1, 5, 2, 4, 4]))
