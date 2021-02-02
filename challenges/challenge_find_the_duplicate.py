@@ -4,5 +4,5 @@ def find_duplicate(nums):
         if n in setOfNums:
             return n
         else:
-            setOfNums.add(n)         
+            setOfNums.add(n)      
     return False
