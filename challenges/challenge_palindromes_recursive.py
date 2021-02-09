@@ -1,9 +1,10 @@
-import math;
+import math
+
 
 def is_palindrome_recursive(word, low, high):
     if not word:
         return False
-    letters_is_equal = word[low] == word[high];
+    letters_is_equal = word[low] == word[high]
 
     if len(word) == 1:
         return True
@@ -17,5 +18,3 @@ def is_palindrome_recursive(word, low, high):
         return True
     else:
         return False
-
-
