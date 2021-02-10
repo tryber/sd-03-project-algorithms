@@ -1,7 +1,10 @@
 import math
 
 
-# Me baseei no código em https://github.com/tryber/sd-03-project-algorithms/blob/king-urek-algorithm/challenges/challenge_palindromes_recursive.py e não consegui pensar em uma forma mais elegante de apresentar
+# Me baseei no código em
+#  https://github.com/tryber/sd-03-project-algorithms/
+# blob/king-urek-algorithm/challenges/challenge_palindromes_recursive.py
+#  e não consegui pensar em uma forma mais elegante de apresentar
 def is_palindrome_recursive(word, low, high):
     if not word:
         return False
